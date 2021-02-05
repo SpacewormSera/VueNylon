@@ -1,43 +1,45 @@
 <template>
   <div class="seqControl">
-    <!-- <button class="seqBtn" v-on:click="runSequence">Play</button> -->
-    <button class="seqBtn" v-on:click="$emit('run-sequence')">Play</button>
-    <button class="seqBtn" v-on:click="pauseSequence">Pause</button>
+    <button class="seqBtn" v-on:click="runSequence">Play/Pause</button>
+    <!-- <button class="seqBtn" v-on:click="$emit('run-sequence')">Play</button> -->
     <button class="seqBtn" v-on:click="stopSequence">Stop</button>
-    <button class="seqBtn">1</button>
-    <button class="seqBtn">2</button>
-    <button class="seqBtn">4</button>
-    <button class="seqBtn">8</button>
+    <button class="seqBtn" v-on:click="stepAmount = 1">1</button>
+    <button class="seqBtn" v-on:click="stepAmount = 2">2</button>
+    <button class="seqBtn" v-on:click="stepAmount = 4">4</button>
+    <button class="seqBtn" v-on:click="stepAmount = 8">8</button>
   </div>
 </template>
 
 <script>
 export default {
-  data(){
+  data() {
     return {
-      stepAmount: 2
-    }
+      running: false,
+      stepAmount: 2,
+      startTime: new Date().getTime(),
+      time: 0,
+    };
   },
   props: [
     // stepAmount: Number,
-    'steps'
+    "steps",
   ],
   methods: {
     runSequence() {
       let currentStep = 0;
       setInterval(() => {
-        console.log(currentStep += 1);
-        if(currentStep >= this.stepAmount){
+        console.log((currentStep += 1));
+        if (currentStep >= this.stepAmount) {
           currentStep = 0;
         }
       }, 1000);
       // return stepInterval;
     },
     pauseSequence() {
-       console.log('pause');
+      console.log("pause");
     },
     stopSequence() {
-      console.log('stop');
+      console.log("stop");
     },
   },
 };
