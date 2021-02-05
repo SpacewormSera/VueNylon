@@ -30,7 +30,7 @@ export default {
   flex-grow: 1;
   align-items: flex-start;
   border: 1px solid grey;
-  min-width: 300px;
+  min-width: 400px;
   min-height: 100px;
 }
 

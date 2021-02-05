@@ -3,7 +3,7 @@
     <SequencerController     
       v-on:run-sequence="runSequence"
     />
-    <div class="container">
+    <div class="stepContainer">
       <SequencerItem 
       v-for="(step, i) of steps" 
       v-bind:step="step" 
@@ -33,6 +33,12 @@ export default {
 
 <style scoped>
 .container {
+  display: grid;
+  flex-wrap: wrap;
+  border: 1px solid rgb(163, 163, 163);
+}
+
+.stepContainer{
   display: flex;
   flex-wrap: wrap;
   border: 1px solid rgb(163, 163, 163);

@@ -23,8 +23,8 @@ export default {
       stepAmount: 2,
       todos: [
         { id: 1, title: "buy something1", completed: false },
-        { id: 2, title: "buy something2", completed: false },
-        { id: 3, title: "buy something3", completed: false },
+        // { id: 2, title: "buy something2", completed: false },
+        // { id: 3, title: "buy something3", completed: false },
       ],
       steps: [
         { id: 1, midi: "note a", osc: "osc note a", active: false },
